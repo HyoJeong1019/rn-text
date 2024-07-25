@@ -1,54 +1,32 @@
-import { Image, StyleSheet, Platform, Text, View } from 'react-native';
-
+import { StyleSheet, View, Text } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
 
-import { PaperProvider, Text as PaperText, Button } from 'react-native-paper';
 
 export default function HomeScreen() {
   return (
-    <PaperProvider>
-      <View style={styles.container}>
-        <Text style={styles.text0}> 안녕하세요</Text>
-        <Button mode="contained" onPress={() => console.log('Pressed')}>
-          <Text style={styles.default}> 안녕하세요</Text>
-        </Button>
-        <Button mode="contained-tonal" onPress={() => console.log('Pressed')}>
-          <ThemedText type="default">한글</ThemedText>
-        </Button>
-        <Button mode="contained-tonal" onPress={() => console.log('Pressed')}>
-          <PaperText style={styles.default}>안녕하세요</PaperText>
-        </Button>
-        <PaperText style={styles.text1} variant="displayLarge">안녕하세요</PaperText>
-        <PaperText style={styles.text2} variant="displayMedium">Display 한글</PaperText>
-        <ThemedText style={styles.text3} type="default">한글 Display 중앙 정렬인가요?</ThemedText>
-      </View>
-    </PaperProvider>
+    <View style={styles.container}>
+      <Text style={styles.text0}>Display 안녕하세요</Text> 
+      <ThemedText  style={styles.text1} type="default">Display 안녕하세요</ThemedText> 
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  default: {
-    fontSize: 16,
-    // lineHeight: 24,
-    backgroundColor:"green",
-  },
   container: {
+    margin: 60,
     padding:10,
+    height: "100%",
     backgroundColor:"green"
   },
   text0: {
     fontSize: 30,
-    backgroundColor: "red", 
-    marginVertical: 10,
+    backgroundColor: "red",
+    // includeFontPadding:false,
   },
   text1: {
-    backgroundColor: "blue",
-  },
-  text2: {
-    backgroundColor: "orange",
-  },
-  text3: {
-    backgroundColor: "white",
+    fontSize: 16,
+    lineHeight: 24,
+    backgroundColor: "pink",
+    // includeFontPadding:false,
   },
 });
